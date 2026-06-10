@@ -1,0 +1,7 @@
+cd c:\Users\varsh\OneDrive\Desktop\CCCC\backend
+npm start
+
+
+
+cd c:\Users\varsh\OneDrive\Desktop\CCCC\frontend
+npm install

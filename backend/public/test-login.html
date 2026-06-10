@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Admin Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 500px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+    input {
+      width: 100%;
+      padding: 8px;
+      box-sizing: border-box;
+    }
+    button {
+      padding: 10px 15px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .error {
+      color: red;
+      margin-top: 10px;
+    }
+    .success {
+      color: green;
+      margin-top: 10px;
+    }
+    #result {
+      margin-top: 20px;
+      padding: 10px;
+      border: 1px solid #ddd;
+      background-color: #f9f9f9;
+      white-space: pre-wrap;
+    }
+  </style>
+</head>
+<body>
+  <h1>Test Admin Login</h1>
+  
+  <div class="form-group">
+    <label for="username">Username:</label>
+    <input type="text" id="username" value="admin">
+  </div>
+  
+  <div class="form-group">
+    <label for="password">Password:</label>
+    <input type="password" id="password" value="admin123">
+  </div>
+  
+  <button onclick="testLogin()">Login</button>
+  
+  <div id="status"></div>
+  <pre id="result"></pre>
+  
+  <script>
+    async function testLogin() {
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      const statusDiv = document.getElementById('status');
+      const resultDiv = document.getElementById('result');
+      
+      statusDiv.innerHTML = '<p>Attempting login...</p>';
+      statusDiv.className = '';
+      
+      try {
+        console.log('Sending login request with:', { username, password });
+        
+        const response = await fetch('http://localhost:5000/api/auth/login', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({ username, password })
+        });
+        
+        const data = await response.json();
+        console.log('Login response:', data);
+        
+        resultDiv.textContent = JSON.stringify(data, null, 2);
+        
+        if (data.success) {
+          statusDiv.innerHTML = '<p>Login successful! Token received.</p>';
+          statusDiv.className = 'success';
+          
+          // Store token in localStorage
+          localStorage.setItem('token', data.token);
+          localStorage.setItem('user', JSON.stringify(data.user));
+          
+          // Add link to dashboard
+          const dashboardLink = document.createElement('p');
+          dashboardLink.innerHTML = '<a href="/admin/dashboard">Go to Admin Dashboard</a>';
+          statusDiv.appendChild(dashboardLink);
+        } else {
+          statusDiv.innerHTML = `<p>Login failed: ${data.message || 'Unknown error'}</p>`;
+          statusDiv.className = 'error';
+        }
+      } catch (error) {
+        console.error('Login error:', error);
+        statusDiv.innerHTML = `<p>Error: ${error.message}</p>`;
+        statusDiv.className = 'error';
+        resultDiv.textContent = error.toString();
+      }
+    }
+  </script>
+</body>
+</html>
