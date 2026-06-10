@@ -91,6 +91,25 @@ npm start
 
 ---
 
+##  Authors & Contributors
+
+* **Varshith N**
+  - 📌 B.E. CSE (Data Science) | Sri Siddhartha Institute of Technology
+  - 💼 Passionate about **Data Science, Web Development, and Civic Tech**
+  - 🔗 [LinkedIn](https://www.linkedin.com/in/varshithn)
+
+* **Harshath B S**
+  - 📌 B.E. ECE| Sri Siddhartha Institute of Technology
+  - 💼 Passionate about **Web Development, and Civic Tech**
+  - 🔗 [LinkedIn](https://www.linkedin.com/in/harshath-b-s-a377992a2/)
+    
+* **Ramesh E**
+  - 📌 Collaborator & Contributor
+  - 💼 Focused on backend & React integrations
+  - 🔗 [LinkedIn](https://www.linkedin.com/in/ramesh-e-431561256)
+
+---
+
 ## ⭐ Contribute
 
 Contributions are welcome!
