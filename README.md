@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # 🌆 civiCConnect – Smart Civic Complaint System
 
 civiCConnect is a **digital civic complaint management system** that empowers citizens to report local infrastructure issues such as potholes, drainage water stagnation, and faulty street lamps. The platform bridges the gap between citizens and local authorities by providing a transparent, trackable, and user-friendly solution.
@@ -119,3 +120,6 @@ Contributions are welcome!
 ## 📜 License
 
 This project is licensed under the **MIT License** – feel free to use & modify.
+=======
+# civiConnect
+>>>>>>> 24bd3af1fd40d07dc60dc3a321887b6058068355
