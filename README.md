@@ -99,8 +99,8 @@ npm start
   - 🔗 [LinkedIn](https://www.linkedin.com/in/varshithn)
 
 * **Harshath B S**
-  - 📌 B.E. ECE| Sri Siddhartha Institute of Technology
-  - 💼 Passionate about **Web Development, and Civic Tech**
+  - 📌 B.E. ECE | Sri Siddhartha Institute of Technology
+  - 💼 Passionate about **Web Development, Software Development**
   - 🔗 [LinkedIn](https://www.linkedin.com/in/harshath-b-s-a377992a2/)
     
 * **Ramesh E**
